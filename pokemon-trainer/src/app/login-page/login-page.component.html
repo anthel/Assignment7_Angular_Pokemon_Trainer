@@ -1,0 +1,22 @@
+<p>login-page works!</p>
+<form #userForm="ngForm" (ngSubmit)="onSubmit()">
+	<fieldset>
+		<label for="name">Name</label>
+		<input type="text" id="name" placeholder="john doe" name="name"
+			required
+			[(ngModel)]="model.name" 
+			#name="ngModel"
+			>
+		<div [hidden]="name.valid || name.pristine"
+			class="error-message"
+			>
+		Name is required
+		</div>
+	</fieldset>
+	<button type="submit" class="userform-btn" 
+		[disabled]="!userForm.form.valid"
+		>Submit
+	</button>
+</form>
+
+{{model | json}}
