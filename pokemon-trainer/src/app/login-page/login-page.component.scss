@@ -15,43 +15,66 @@
    justify-content: center;
  }
  .content-wrapper {
-  display: flex;
-  justify-content: flex-start;
-  flex-direction: column;
-  
-  height: 100%;
-  
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    height: 100%;
  }
  .content-container {
     display: flex;
     justify-content: center;
-   background-color:  mat-color(map-get($my-custom-theme, accent), 'lighter');
-   width: 80vw;
+    background-color:  mat-color(map-get($my-custom-theme, accent), 'lighter');
+    width: 80vw;
  }
  
   .error-message-text {
     color: red;
   }
   .input-label {
-      
+    color: black;
   }
-  .mat-form-field + .mat-form-field {
-    margin-left: 8px;
+  mat-form-field + .mat-form-field + .mat-form-field-appearance-fill  {
+    background-color: #f2ebae;
   }
   .form-container {
-    margin: 8px;
+    width: 300px;
+    height: 400px;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    margin-left: 130px;
   }
+  .form-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .userform-btn:disabled{
+    background-color: mat-color(map-get($my-custom-theme, primary), 'darker');
+    color: #e2e2e2;
+  }
+  .userform-btn {
+    background-color: mat-color(map-get($my-custom-theme, primary), 'lighter');
+    color: #f2f2f2;
+  }
+  
   .pokemon.logo-img {
     
   }
   .logo-container {
-    
+    position: relative;
+    height: 330px;
     width: 600px;
   }
   .logo-header {
+    position: absolute;
+    top: 230px;
+    left: 180px;
     width: 400px;
-    margin: 0 auto;
-    padding-top: 20px;
     font-weight: 5000;
+
   }
 
+  .mat-form-field-flex .ng-tns-c69-1 {
+    background-color: #f2ebae !important;
+    // background-color: #fff7b4 !important;
+  }
