@@ -12,6 +12,10 @@ export class CollectedPokemonsComponent {
     @Input() chaughtPokemon!: Pokemon;
     public avatarCollectedUrl: string = '';
     public collectedPokemonId: string = '';
+    public hpStat: string = '';
+    public attackStat: string = '';
+    public defenceStat: string = '';
+    
     
     constructor(private readonly collectedPokemonService: CollectedPokemonService) {
 }
@@ -22,6 +26,10 @@ export class CollectedPokemonsComponent {
           (pokemon: any) => {
             this.avatarCollectedUrl = pokemon.sprites.front_default;
             this.collectedPokemonId = pokemon.id;
+            this.hpStat = pokemon.stats[0].base_stat;
+            this.attackStat = pokemon.stats[1].base_stat;
+            this.defenceStat = pokemon.stats[2].base_stat;
+            
           }
         )
       }

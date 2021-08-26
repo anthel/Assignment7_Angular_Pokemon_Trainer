@@ -13,7 +13,6 @@ export class CollectedPokemonService {
     constructor(private readonly http: HttpClient) { }
   
     public fetchPokemonPicture(url: string): Observable<string> {
-      console.log(url)
       return this.http.get<string>(url);
     }
 }
