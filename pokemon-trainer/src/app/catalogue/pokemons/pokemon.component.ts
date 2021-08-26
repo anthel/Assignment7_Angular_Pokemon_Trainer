@@ -11,6 +11,7 @@ import { PokemonService } from "../services/pokemon.service";
 export class PokemonsComponent {
     @Input() pokemon!: Pokemon;
     public avatarUrl: string = '';
+    public pokemonId: string = '';
     public clicked: boolean = false;
     
     constructor(private readonly pokemonService: PokemonService) {
@@ -21,6 +22,8 @@ export class PokemonsComponent {
         .subscribe(
           (pokemon: any) => {
             this.avatarUrl = pokemon.sprites.front_default;
+            this.pokemonId = pokemon.id;
+            console.log(pokemon.id)
           }
         )
       }

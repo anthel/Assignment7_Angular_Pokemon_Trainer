@@ -1,5 +1,5 @@
 .pokemon-card {
-    width: 300px;
+    width: 150px;
     text-align: center;
     border: 2px solid rgb(6, 129, 23);
     border-radius: 3%;
@@ -12,7 +12,7 @@
 }
 
 .pokemon-card-clicked {
-    width: 300px;
+    width: 150px;
     text-align: center;
     border: 2px solid rgb(240, 40, 40);
     border-radius: 3%;

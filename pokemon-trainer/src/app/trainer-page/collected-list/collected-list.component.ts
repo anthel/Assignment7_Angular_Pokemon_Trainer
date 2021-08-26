@@ -1,5 +1,4 @@
 import { Component } from "@angular/core";
-import { Pokemon } from "../models/pokemon";
 
 @Component({
     selector: 'app-collected-list',

@@ -11,7 +11,7 @@ import { CollectedPokemonService } from "../services/collected-pokemon.service";
 export class CollectedPokemonsComponent {
     @Input() chaughtPokemon!: Pokemon;
     public avatarCollectedUrl: string = '';
-    
+    public collectedPokemonId: string = '';
     
     constructor(private readonly collectedPokemonService: CollectedPokemonService) {
 }
@@ -21,6 +21,7 @@ export class CollectedPokemonsComponent {
         .subscribe(
           (pokemon: any) => {
             this.avatarCollectedUrl = pokemon.sprites.front_default;
+            this.collectedPokemonId = pokemon.id;
           }
         )
       }
