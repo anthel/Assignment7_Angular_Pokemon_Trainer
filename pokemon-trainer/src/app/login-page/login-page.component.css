@@ -1,11 +1,11 @@
-.ng-valid[required], .ng-valid.required  {
-    border-left: 5px solid #42A948; /* green */
+/* .ng-valid[required], .ng-valid.required  {
+    border-left: 5px solid #42A948; 
   }
   
   .ng-invalid:not(form)  {
-    border-left: 5px solid #a94442; /* red */
+    border-left: 5px solid #a94442; 
   }
-
+ */
   .error-message-container {
 
   }
@@ -13,5 +13,11 @@
     color: red;
   }
   .input-label {
-      color: green;
+      
+  }
+  .mat-form-field + .mat-form-field {
+    margin-left: 8px;
+  }
+  .form-container {
+    margin: 8px;
   }

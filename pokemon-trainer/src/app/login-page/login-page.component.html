@@ -1,23 +1,34 @@
 <p>login-page works!</p>
-<form #userForm="ngForm" (ngSubmit)="onSubmit()">
-	<fieldset>
-		<label for="name" class="input-label">Name</label>
-		<input type="text" id="name" placeholder="john doe" name="name"
-			required
-			[(ngModel)]="model.name" 
-			#name="ngModel"
-			minlength="2"
+<div class="form-container">
+	<form [formGroup]="userForm" (ngSubmit)="onSubmit()" (submit)="$event.preventDefault()">
+		<mat-form-field appearance="fill">
+			<mat-label for="name" class="input-label">Name</mat-label>
+			<input type="text" id="name" placeholder="john doe" name="name"
+				matInput
+				required
+				formControlName="name"
+				>
+			<mat-error *ngIf="name?.invalid">{{getNameErrorMessage()}}</mat-error>
+		</mat-form-field>
+		
+		<mat-form-field appearance="fill">
+			<mat-label>Enter your email</mat-label>
+			<input type="email" id="email" placeholder="pat@example.com" 
+				matInput
+				required 
+				formControlName="email"
+				>
+			<mat-error *ngIf="email?.invalid">{{getEmailErrorMessage()}}</mat-error>
+		</mat-form-field>
+		
+		<button mat-raised-button color="primary"
+			type="submit"
+			[disabled]="!userForm.valid"
+			class="userform-btn" 
 			>
-		<div [hidden]="name.valid || name.pristine"
-			class="error-message-container"
-			>
-		<p class="error-message-text">Name is required </p>
-		</div>
-	</fieldset>
-	<button type="submit" class="userform-btn" 
-		[disabled]="!userForm.form.valid"
-		>Submit
-	</button>
-</form>
+			Submit</button>
+		
+	</form>
+</div>
 
-{{model | json}}
+

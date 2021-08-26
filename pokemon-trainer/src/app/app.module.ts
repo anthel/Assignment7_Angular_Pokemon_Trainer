@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,6 +9,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { CatalogueListComponent } from './catalogue/catalogue-list/catalogue-list.component';
 import { CataloguePage } from './catalogue/catalogue.page';
 import { PokemonsComponent } from './catalogue/pokemons/pokemon.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TextFieldModule } from '@angular/cdk/text-field';
+import { MatFormFieldModule } from '@angular/material/form-field'; 
+import { MatInputModule } from '@angular/material/input'; 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +27,11 @@ import { PokemonsComponent } from './catalogue/pokemons/pokemon.component';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    FormsModule 
+    BrowserAnimationsModule,
+    TextFieldModule,
+    MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
