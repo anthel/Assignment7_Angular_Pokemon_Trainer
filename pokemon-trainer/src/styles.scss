@@ -1,11 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
 @import '@angular/material/prebuilt-themes/deeppurple-amber.css';
 
+
+@import './app/login-page/theme.scss';
+
+// IMPORT ONLY ONCE, AS ALL STYLES ARE BEING OUTPUT
+
+// Include non-theme styles for core.
 @include mat-core();
+
+// Include all theme styles for the components.
+@include angular-material-theme($my-custom-theme);
+
 
 body {
     font-family: 'Lato', sans-serif;
     margin: 0;
+    background: repeating-linear-gradient(
+        45deg,
+        black,
+        black 10px,
+        #444 10px,
+        #444 11px
+        );
 }
 html, body { height: 100%; }
 
