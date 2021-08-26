@@ -17,7 +17,6 @@ import { PokemonsComponent } from './pokemons/pokemon.component';
     CatalogueListComponent,
     CataloguePage,
     PokemonsComponent,
-    
   ],
   imports: [
     BrowserModule,

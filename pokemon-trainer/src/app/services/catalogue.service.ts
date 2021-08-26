@@ -18,6 +18,8 @@ export class CatalogueService {
         this.http.get<Pokemon[]>('https://pokeapi.co/api/v2/pokemon?limit=100')
         .subscribe((pokemons: any) => {
             this.pokemons = pokemons.results;
+            console.log(pokemons);
+            
         }, (error: HttpErrorResponse) => {
             this.error = error.message;
         })
