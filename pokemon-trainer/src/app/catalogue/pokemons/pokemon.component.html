@@ -1,0 +1,4 @@
+<ul [ngClass]="{'pokemon-card' : !clicked, 'pokemon-card-clicked' : clicked}" (click)="onClick()">
+    <p>{{pokemon.name}}</p>
+    <img src={{avatarUrl}}>
+</ul>
