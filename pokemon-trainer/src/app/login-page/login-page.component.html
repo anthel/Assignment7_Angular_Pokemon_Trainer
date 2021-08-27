@@ -1,22 +1,58 @@
-<p>login-page works!</p>
-<form #userForm="ngForm" (ngSubmit)="onSubmit()">
-	<fieldset>
-		<label for="name">Name</label>
-		<input type="text" id="name" placeholder="john doe" name="name"
-			required
-			[(ngModel)]="model.name" 
-			#name="ngModel"
-			>
-		<div [hidden]="name.valid || name.pristine"
-			class="error-message"
-			>
-		Name is required
-		</div>
-	</fieldset>
-	<button type="submit" class="userform-btn" 
-		[disabled]="!userForm.form.valid"
-		>Submit
-	</button>
-</form>
 
-{{model | json}}
+<div class="page-container">
+	<div class="content-container">
+		<div class="content-wrapper">
+			<div class="logo-container">
+				<img class="pokemon-logo-img" 
+					src="../../assets/images/pokemon_logo_1280px.png"
+					width=600
+					>
+				<h2 class="logo-header">- The trainer application</h2>
+			</div>
+			<div class="form-wrapper">
+				<div class="form-container">
+					<form [formGroup]="userForm" 
+						(ngSubmit)="onSubmit()" 
+						(submit)="$event.preventDefault()"
+						novalidate
+						id="userForm"
+						>
+						<mat-form-field appearance="fill">
+							<mat-label for="name" class="input-label">Name</mat-label>
+							<input type="text" id="name" placeholder="John Doe" name="name"
+								matInput
+								required
+								formControlName="name"
+								>
+							<mat-error *ngIf="name?.invalid">{{getNameErrorMessage()}}</mat-error>
+						</mat-form-field>
+						
+						<mat-form-field appearance="fill" color="primary" fillColor="primary">
+							<mat-label for="email" class="input-label">Enter your email</mat-label>
+							<input type="email" id="email" placeholder="youremail@example.com" 
+								matInput
+								required 
+								formControlName="email"
+								>
+							<mat-error *ngIf="email?.invalid">{{getEmailErrorMessage()}}</mat-error>
+						</mat-form-field>
+						
+						<button mat-raised-button color="primary"
+							type="submit"
+							[disabled]="!userForm.valid"
+							class="userform-btn" 
+							>
+							Submit</button>
+						
+					</form>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	
+	
+</div>
+
+
+
