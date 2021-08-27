@@ -6,13 +6,12 @@ import { Observable } from 'rxjs';
     providedIn: 'root'
 }) 
 
-export class PokemonService {
+export class CollectedPokemonService {
     private pokemon: any = {};
     private error: string = "";
   
     constructor(private readonly http: HttpClient) { }
   
-
     //Using the url got from the first fetch to be able to get other useful information from the pokemon. 
     public fetchPokemonPicture(url: string): Observable<string> {
       return this.http.get<string>(url);

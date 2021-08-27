@@ -15,6 +15,7 @@
 						(ngSubmit)="onSubmit()" 
 						(submit)="$event.preventDefault()"
 						novalidate
+						id="userForm"
 						>
 						<mat-form-field appearance="fill">
 							<mat-label for="name" class="input-label">Name</mat-label>
@@ -28,7 +29,7 @@
 						
 						<mat-form-field appearance="fill" color="primary" fillColor="primary">
 							<mat-label for="email" class="input-label">Enter your email</mat-label>
-							<input type="email" id="email" placeholder="pat@example.com" 
+							<input type="email" id="email" placeholder="youremail@example.com" 
 								matInput
 								required 
 								formControlName="email"

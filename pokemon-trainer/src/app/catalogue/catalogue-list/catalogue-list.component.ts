@@ -10,10 +10,13 @@ import { Pokemon } from '../models/pokemon';
 export class CatalogueListComponent {
     constructor(
         private readonly catalogueService: CatalogueService){}
-
+    
+    //starts the fetch of the pokemons
     ngOnInit(): void {
         this.catalogueService.fetchPokemons();
     }
+
+    // gets the array with all of the fetch pokemons
     get pokemons(): Pokemon[] {
         return this.catalogueService.getPokemons();
     }

@@ -1,0 +1,9 @@
+.pokemon-card {
+    width: 200px;
+    text-align: center;
+    border: 1px solid rgb(0, 0, 0);
+    background: linear-gradient(rgb(255, 0, 0) 50%, rgb(255, 255, 255) 50%);
+    border-radius: 3%;
+    margin: 5px;
+    float: left;
+}

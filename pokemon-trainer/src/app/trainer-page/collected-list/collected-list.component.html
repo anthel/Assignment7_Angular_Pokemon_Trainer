@@ -1,0 +1,12 @@
+<div class="topnav">
+    <a>Pokemon</a>
+    <a class="as" routerLink="/catalogue">Catalogue</a>
+    <a class="as" routerLink="/trainer">Trainer</a>
+</div>
+<ul>
+    <h2 class="title">Collected Pokemons</h2>
+    <app-collected-pokemons
+    *ngFor="let caughtPokemon of caughtPokemons"
+    [chaughtPokemon] = 'caughtPokemon'>
+    </app-collected-pokemons>
+</ul>

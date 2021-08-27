@@ -6,4 +6,7 @@ import { Component } from "@angular/core";
     styleUrls: ['./trainer-page.component.scss']
 })
 
-export class TrainerPageComponent {}
+export class TrainerPageComponent {
+
+    
+}
