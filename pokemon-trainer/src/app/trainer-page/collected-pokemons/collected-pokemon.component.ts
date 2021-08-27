@@ -20,6 +20,9 @@ export class CollectedPokemonsComponent {
     constructor(private readonly collectedPokemonService: CollectedPokemonService) {
 }
 
+    /**
+     * Displays all the caught pokemon togheter with some stats. 
+     */
     ngOnInit(): void {
         this.collectedPokemonService.fetchPokemonPicture(this.chaughtPokemon.url)
         .subscribe(

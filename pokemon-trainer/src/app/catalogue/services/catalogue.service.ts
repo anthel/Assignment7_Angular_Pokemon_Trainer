@@ -14,6 +14,7 @@ export class CatalogueService {
     constructor(private readonly http: HttpClient) {
     }
 
+    //fetches the first 100 pokemons in the pokedeck. This to make it lag less. Just to visualize
     public fetchPokemons(): void {
         this.http.get<Pokemon[]>('https://pokeapi.co/api/v2/pokemon?limit=100')
         .subscribe((pokemons: any) => {
