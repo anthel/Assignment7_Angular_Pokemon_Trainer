@@ -7,8 +7,5 @@ import { Component } from "@angular/core";
 })
 
 export class CollectedListComponent {
-    /*get caughtPokemons(): Pokemon[] {
-        return JSON.parse(localStorage.getItem("caught-pokemons") || "[]");
-    }*/
     public caughtPokemons = JSON.parse(localStorage.getItem("caught-pokemons") || "[]");
 }
