@@ -4,7 +4,7 @@ import { Pokemon } from '../models/pokemon';
 @Component({
     selector: 'app-catalogue-list',
     templateUrl: 'catalogue-list.component.html',
-    styleUrls: ['catalogue-list.component.css']
+    styleUrls: ['catalogue-list.component.scss']
 })
 
 export class CatalogueListComponent {

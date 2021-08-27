@@ -5,7 +5,7 @@ import { PokemonService } from "../services/pokemon.service";
 @Component({
     selector: 'app-pokemons',
     templateUrl: 'pokemon.component.html',
-    styleUrls: ['pokemon.component.css']
+    styleUrls: ['pokemon.component.scss']
 })
 
 export class PokemonsComponent {

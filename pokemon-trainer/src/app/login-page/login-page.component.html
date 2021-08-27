@@ -11,7 +11,11 @@
 			</div>
 			<div class="form-wrapper">
 				<div class="form-container">
-					<form [formGroup]="userForm" (ngSubmit)="onSubmit()" (submit)="$event.preventDefault()">
+					<form [formGroup]="userForm" 
+						(ngSubmit)="onSubmit()" 
+						(submit)="$event.preventDefault()"
+						novalidate
+						>
 						<mat-form-field appearance="fill">
 							<mat-label for="name" class="input-label">Name</mat-label>
 							<input type="text" id="name" placeholder="John Doe" name="name"
@@ -22,8 +26,8 @@
 							<mat-error *ngIf="name?.invalid">{{getNameErrorMessage()}}</mat-error>
 						</mat-form-field>
 						
-						<mat-form-field appearance="fill" color="primary">
-							<mat-label>Enter your email</mat-label>
+						<mat-form-field appearance="fill" color="primary" fillColor="primary">
+							<mat-label for="email" class="input-label">Enter your email</mat-label>
 							<input type="email" id="email" placeholder="pat@example.com" 
 								matInput
 								required 

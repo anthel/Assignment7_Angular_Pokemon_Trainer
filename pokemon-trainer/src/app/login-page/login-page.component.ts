@@ -1,6 +1,7 @@
 import { 
   Component, 
-  OnInit } from '@angular/core';
+  OnInit,
+  ViewEncapsulation  } from '@angular/core';
 import { User } from '../models/user';
 import { Router } from '@angular/router';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
@@ -8,7 +9,8 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 @Component({
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',
-  styleUrls: ['./login-page.component.scss']
+  styleUrls: ['./login-page.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class LoginPageComponent implements OnInit {
 
@@ -17,18 +19,20 @@ export class LoginPageComponent implements OnInit {
   userForm = new FormGroup({
      name: new FormControl(this.user.name, [
       Validators.required, 
-      Validators.minLength(2)
+      Validators.minLength(2),
+      Validators.pattern('[a-zA-Z]*')
     ]),
     email: new FormControl(this.user.email, [
       Validators.required, 
       Validators.email
     ])
-  })
+  });
 
   constructor(private router: Router) {}
  
   onSubmit() {
-    localStorage.setItem('user', this.user.name);
+    const userformNameInput = this.userForm.get('name')!.value
+    localStorage.setItem('user', userformNameInput);
     this.router.navigate(['catalogue'])
   }
 
@@ -36,7 +40,13 @@ export class LoginPageComponent implements OnInit {
     if (this.userForm.get('name')!.hasError('required')) {
       return 'You must enter a value';
     }
-    return this.userForm.get('name')!.hasError('minLength') ? 'Name requires at least 2 characters' : '';
+    if(this.userForm.get('name')!.hasError('pattern')) {
+      return 'Name can\'t contain special characters';
+    }
+    if(this.userForm.get('name')!.hasError('minlength')) {
+      return 'Name requires at least 2 characters';
+    }
+    return '';
   }
   getEmailErrorMessage() {
     if (this.userForm.get('email')!.hasError('required')) {

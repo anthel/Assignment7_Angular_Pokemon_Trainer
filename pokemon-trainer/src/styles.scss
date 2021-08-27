@@ -26,3 +26,14 @@ body {
 }
 html, body { height: 100%; }
 
+#userForm {
+    .mat-form-field-underline {
+      background-color: #f2ebae;
+    }
+    .mat-form-field-ripple {
+      background-color: #f2ebae;
+    }
+    .placeholder {
+      display: none;
+    }
+  }
