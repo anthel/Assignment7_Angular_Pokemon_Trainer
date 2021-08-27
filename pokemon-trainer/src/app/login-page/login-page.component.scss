@@ -26,12 +26,11 @@
     background-color:  mat-color(map-get($my-custom-theme, accent), 'lighter');
     width: 80vw;
  }
- 
   .error-message-text {
     color: red;
   }
   .input-label {
-    color: #f2f2f2;
+    color: rgb(38, 43, 114);
   }
   mat-form-field div div.mat-form-field-flex.ng-tns-c69-0  {
     background-color: #f2ebae !important;
@@ -51,15 +50,16 @@
     display: flex;
     justify-content: center;
   }
-  .userform-btn:disabled{
+  .mat-raised-button.mat-button-disabled:not([class*="mat-elevation-z"]){
     background-color: mat-color(map-get($my-custom-theme, primary), 'darker');
-    color: #e2e2e2;
+    color: #c0c0c0;
+    margin: 13px 0 0 60px;
   }
-  .userform-btn {
+  .userform-btn.mat-focus-indicator {
     background-color: mat-color(map-get($my-custom-theme, primary), 'lighter');
     color: #f2f2f2;
+    margin: 13px 0 0 60px;
   }
-  
   .logo-container {
     position: relative;
     height: 330px;
@@ -71,13 +71,8 @@
     left: 180px;
     width: 400px;
     font-weight: 5000;
-
   }
   mat-form-field + .mat-form-field.ng-tns-c69-1.mat-primary.mat-form-field-type-mat-input.mat-form-field-appearance-fill.mat-form-field-can-float.mat-form-field-has-label.mat-form-field-hide-placeholder.ng-untouched.ng-pristine.ng-invalid.ng-star-inserted {
     margin-top: 15px;
   }
-
-/*   .mat-form-field-flex, .ng-tns-c69-1 {
-    background-color: #f2ebae !important;
-  } */
 
