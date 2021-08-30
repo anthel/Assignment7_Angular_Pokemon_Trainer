@@ -56,9 +56,7 @@ export class LoginPageComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    
   }
-
   get name() {
     return this.userForm.get('name');
   }
